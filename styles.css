@@ -67,9 +67,11 @@ header {
     color:var(--dark-blue);
     box-shadow:var(--card-shadow)}
 
-.subtext{font-size:20px;
+.subtext{font-size:25px;
     color:var(--muted);
-    font-weight:500}
+    font-weight:500;
+    letter-spacing: 1px;
+    margin-bottom: 25px;}
 nav{display:flex;
     gap:16px;
     align-items:center}
@@ -127,16 +129,15 @@ a.nav-link:hover{background:transparent;
 
 }
 .heroImg {
-  width: 100px;        /* يمكن تعديل الحجم حسب اللوجو */
+  width: 150px;        /* يمكن تعديل الحجم حسب اللوجو */
   height: auto;       /* يحافظ على نسبة الصورة */
   border-radius: 8px; /* إذا أردت زوايا مستديرة */
   object-fit: contain;
 }
 
 
-.headline{font-size:28px;
-    font-weight:
-    800;
+.headline{font-size:60px;
+    font-weight:800px;
     color:var(--dark-blue);
     margin:0 0 12px}
 .sub{color:var(--muted);
@@ -289,8 +290,8 @@ footer{position:fixed;
   gap: 1rem;
 }
 .socialMedia a{
-  width: 24px;
-  height: 24px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -300,8 +301,8 @@ footer{position:fixed;
   padding: 1rem;
 }
 .socialMedia img{
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
 }
 
 
@@ -329,7 +330,7 @@ footer{position:fixed;
   }
   
   .headline {
-    font-size: 24px;
+    font-size: 40px;
   }
 
   .heroImg {
@@ -404,15 +405,16 @@ footer{position:fixed;
 
   /* 6. الفوتر: تحويله من Fixed إلى Relative في الموبايل لكي لا يغطي المحتوى */
   footer {
+    display: flex;
     position: relative;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 1rem;
     padding: 20px;
     text-align: center;
   }
 
   .socialMedia {
-    margin-top: 10px;
+    margin-top: 15px;
   }
   
   /* تعديل padding البودي في الموبايل */
