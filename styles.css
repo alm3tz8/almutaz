@@ -82,7 +82,8 @@ a.nav-link{color:#ffffffb3;
     border-radius:8px}
 a.nav-link:hover{background:transparent;
     color:#f7e8b8}
-.hero{padding:36px 28px;
+.hero{
+    padding:36px 28px;
     display:flex;
     gap:20px;
     align-items:center;      /* لتوسيط العناصر أفقياً */
@@ -115,6 +116,8 @@ a.nav-link:hover{background:transparent;
     padding: 0.5rem 1.5rem;
     text-shadow: 0px 4px 4px rgba(0,0,0,0.1);
 }
+a.hireMe:hover{
+    color:#f7e8b8}
 .cv {
     background-color: var(--dark-blue);
     color: #eef2f6;
@@ -126,8 +129,9 @@ a.nav-link:hover{background:transparent;
     align-items: center;
     gap: 0.5rem;
     backdrop-filter: var(--dark-blue);
-
 }
+a.cv:hover{
+    color:#f7e8b8}
 .heroImg {
   width: 150px;        /* يمكن تعديل الحجم حسب اللوجو */
   height: auto;       /* يحافظ على نسبة الصورة */
@@ -155,12 +159,12 @@ a.nav-link:hover{background:transparent;
 
 /* aboutMe  */
 .aboutMe{
+  background-color: #02406f;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 5rem auto;
-  max-width: 1200px;
-  gap: 10rem;
+  padding: 8rem 7rem;
+  gap: 2rem;
 }
 .textContainer{
   display: flex;
@@ -177,10 +181,12 @@ a.nav-link:hover{background:transparent;
 }
 .aboutTitle{
   color: #6b7684;
+  max-width: 1200px;
 }
 .aboutMePar{
   text-align: justify;
-  color: #02406f;
+  color: #ffffff;
+  max-width: 1200px;
 }
 
 
@@ -188,7 +194,7 @@ a.nav-link:hover{background:transparent;
 .works{
   background-image: url("img/svg/background.svg");
   padding: 10rem 10rem;
-  margin: 5rem 0rem;
+  
 }
 .workContainer{
   display: flex;
@@ -204,6 +210,7 @@ a.nav-link:hover{background:transparent;
   justify-content: left;
   gap: 5px;
   font-size: 2rem;
+  margin-bottom: 70px;
 }
 .works ul{
   display: flex;
@@ -232,20 +239,21 @@ a.nav-link:hover{background:transparent;
 
 /* contact  */
 .contactContacMe{
-  color: #03294c;
+  background-image: url("img/svg/background.svg");
+  background-color: #02406f;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   gap: 2rem;
-  margin: 2rem auto;
-  max-width: 1200px;
+  padding: 4rem 10rem
+  
 }
 .contactTitle{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 1rem;
   margin-bottom: 10px;
   font-size: 2rem;
 }
@@ -256,16 +264,7 @@ a.nav-link:hover{background:transparent;
   margin-right: 5rem;
   gap: 20rem;
 }
-.contact h3, .contact a{
-  color: var(--dark-blue);
-  text-decoration: none;
-}
-.emailAndPhone{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
+
 
 
 /* footer  */
@@ -301,10 +300,13 @@ footer{position:fixed;
   padding: 1rem;
 }
 .socialMedia img{
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
+  transition: transform 0.2s;
 }
-
+.socialMedia a :hover {
+  transform: scale(1.3);
+}
 
 
   /* --- ضبط التجاوب للشاشات أقل من 1023px --- */
@@ -341,7 +343,7 @@ footer{position:fixed;
   .aboutMe {
     flex-direction: column;
     gap: 2rem;
-    padding: 0 20px;
+    padding: 50px 30px;
     text-align: center;
     margin: 3rem auto;
   }
@@ -400,7 +402,7 @@ footer{position:fixed;
   .contactTitle {
     gap: 1rem;
     font-size: 1.5rem;
-    flex-direction: column;
+    
   }
 
   /* 6. الفوتر: تحويله من Fixed إلى Relative في الموبايل لكي لا يغطي المحتوى */
