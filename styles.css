@@ -308,6 +308,84 @@ footer{position:fixed;
   transform: scale(1.3);
 }
 
+/* flower */
+
+/* تنسيق الزر ليناسب تصميمك */
+.magic-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: var(--dark-blue);
+    color: #f7e8b8;
+    border: 2px solid #00adb5;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-weight: bold;
+}
+
+.magic-button:active {
+    transform: scale(0.95);
+}
+
+/* تنسيق الوردة التي ستظهر */
+.flower-emoji {
+    position: fixed;
+    font-size: 2rem;
+    pointer-events: none; /* لكي لا تمنع الضغط على ما خلفها */
+    z-index: 9999;
+    animation: floatUp 2s ease-out forwards;
+}
+
+/* حركة الوردة: تصعد للأعلى مع دوران وتختفي تدريجياً */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* flower 2*/
+/* تنسيق الطبقة المغطية */
+.flower-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    z-index: 9999; /* ليكون فوق كل شيء */
+    display: none; /* مخفي افتراضياً */
+    justify-content: center;
+    align-items: center;
+}
+
+.close-flower {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 2px solid #9d4edd;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.magic-button {
+    position: relative; /* ضروري لكي يعمل الـ z-index */
+    z-index: 100;       /* رقم عالي ليظهر فوق الخلفيات */
+    display: block;     /* لضمان أنه ليس none */
+    margin: 20px auto;  /* لتوسيطه */
+    /* باقي تنسيقاتك */
+}
+
+/* انسخ باقي كود الـ CSS الخاص بالوردة (petal, center, stem, animations) هنا كما هو */
+
 
   /* --- ضبط التجاوب للشاشات أقل من 1023px --- */
 @media (max-width: 1023px) {
