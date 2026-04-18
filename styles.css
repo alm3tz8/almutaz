@@ -17,9 +17,20 @@ body{
   justify-content: space-between; /* هذا السطر هو السر: يدفع اللوجو لليسار والروابط لليمين */  direction: ltr; /* لضمان أن اليسار هو البداية للوجو */
   margin:0;
   font-family:'Segoe UI',Tahoma,sans-serif;
-  background:var(--bg);
+  background:#EBEEF1;
   color:#0b1220;
   padding-bottom:80px;
+}
+/* تنسيق عام لكل الأزرار والروابط لتبدو متفاعلة */
+a, button {
+    cursor: pointer;
+    transition: all 0.3s ease; /* نعومة في الحركة */
+}
+
+/* تأثير "التحميل" البسيط عند الضغط */
+.clicking {
+    opacity: 0.7;
+    pointer-events: none; /* منع الضغط المتكرر أثناء التأخير */
 }
 header {
   background: var(--dark-blue);
@@ -85,12 +96,16 @@ a.nav-link:hover{background:transparent;
 .hero{
     padding:36px 28px;
     display:flex;
-    gap:20px;
+    gap:10px;
     align-items:center;      /* لتوسيط العناصر أفقياً */
     justify-content:center;  /* لتوسيط العناصر عمودياً */
     flex-direction: column; 
     text-align: center;      /* لضمان توسيط النصوص داخل الحاوية */
-    margin: 5 rem auto;
+    margin: .5rem auto;
+    width: calc(100% - 20px); /* عرض كامل ناقص 40px للمسافة الجانبية */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* ظل خفيف لتحديد القسم */
 }
 .hero-left{
   max-width:720px;
@@ -165,6 +180,10 @@ a.cv:hover{
   align-items: center;
   padding: 8rem 7rem;
   gap: 2rem;
+  width: calc(100% - 20px); /* عرض كامل ناقص 40px للمسافة الجانبية */
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* ظل خفيف لتحديد القسم */
+  margin: .5rem auto;
 }
 .textContainer{
   display: flex;
@@ -193,7 +212,12 @@ a.cv:hover{
 /* works  */
 .works{
   background-image: url("img/svg/background.svg");
-  padding: 10rem 10rem;
+  padding: .5rem 10rem;
+  margin: .5rem auto;
+  width: calc(100% - 20px); /* عرض كامل ناقص 40px للمسافة الجانبية */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* ظل خفيف لتحديد القسم */
   
 }
 .workContainer{
@@ -246,8 +270,11 @@ a.cv:hover{
   align-items: center;
   justify-content: space-around;
   gap: 2rem;
-  padding: 4rem 10rem
-  
+  padding: .5rem 10rem;
+  margin: .5rem auto;
+  width: calc(100% - 20px); /* عرض كامل ناقص 40px للمسافة الجانبية */ 
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* ظل خفيف لتحديد القسم */
 }
 .contactTitle{
   display: flex;
@@ -261,8 +288,8 @@ a.cv:hover{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 5rem;
   gap: 20rem;
+  width: calc(100% - 20px); /* عرض كامل ناقص 40px للمسافة الجانبية */
 }
 
 
@@ -276,7 +303,9 @@ footer{position:fixed;
     padding:12px 28px;
     display:flex;
     justify-content:space-between;
-    align-items:center}
+    align-items:center;
+    
+  }
 .footer-left{color:var(--muted)}
 .socials a{text-decoration:none;
     margin-left:12px;
@@ -394,7 +423,7 @@ footer{position:fixed;
   header {
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
+    padding: .5rem;
     text-align: center;
   }
 
@@ -406,7 +435,7 @@ footer{position:fixed;
   /* 2. قسم الـ Hero: تصغير الخطوط وضبط الصورة */
   .hero {
     padding: 2rem 1rem;
-    margin: 2rem auto;
+    margin: .5rem auto;
   }
   
   .headline {
@@ -423,7 +452,7 @@ footer{position:fixed;
     gap: 2rem;
     padding: 50px 30px;
     text-align: center;
-    margin: 3rem auto;
+    margin: .5rem auto;
   }
   .aboutMeImg {
     width: 300px;
@@ -438,7 +467,8 @@ footer{position:fixed;
   /* 4. قسم الأعمال Works: تقليل الحواشي الكبيرة وتوسيط العناصر */
   .works {
     padding: 4rem 1rem;
-    margin: 2rem 0;
+    margin: .5rem auto;
+    
   }
 
   .workContainer {
@@ -473,8 +503,7 @@ footer{position:fixed;
   .contact {
     flex-direction: column;
     gap: 2rem;
-    margin-right: 0; /* إلغاء المارجن اليمين */
-    padding: 0 20px;
+    
   }
 
   .contactTitle {
@@ -482,9 +511,17 @@ footer{position:fixed;
     font-size: 1.5rem;
     
   }
-
+  .contactContacMe{
+  
+  padding: 2rem 0rem;
+  margin: .5rem auto;
+  
+}
+footer, .footer-container { 
+        display: none !important; 
+    }
   /* 6. الفوتر: تحويله من Fixed إلى Relative في الموبايل لكي لا يغطي المحتوى */
-  footer {
+  .footer {
     display: flex;
     position: relative;
     flex-direction: column-reverse;

@@ -69,3 +69,38 @@ function bloomFlower() {
         closeBtn.style.transition = "opacity 1s ease";
     }, 1000);
 }
+// زر  الجميع يشتري الورود، أنا أبرمجها لك 🌸
+function delayedNav(url) {
+    const btn = event.target;
+    btn.style.transform = "scale(0.9)"; // تأثير ضغطة الزر
+    
+    setTimeout(() => {
+        window.location.href = url;
+    }, 500);
+}
+// جميع ازرار
+document.addEventListener('DOMContentLoaded', () => {
+    // تحديد جميع الروابط والأزرار التي تحتوي على رابط انتقال
+    const allLinks = document.querySelectorAll('a, button[href], .magic-button');
+
+    allLinks.forEach(element => {
+        element.addEventListener('click', function(e) {
+            // منع الانتقال الفوري
+            e.preventDefault();
+            
+            // الحصول على الرابط المستهدف
+            const targetUrl = this.getAttribute('href') || this.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+
+            if (targetUrl) {
+                // تأثير بصري بسيط (تصغير العنصر قليلاً)
+                this.style.transform = "scale(0.95)";
+                this.style.transition = "transform 0.2s";
+
+                // تنفيذ الانتقال بعد نصف ثانية (500ms)
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 500);
+            }
+        });
+    });
+});
